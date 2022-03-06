@@ -49,7 +49,7 @@ public class CircularTree {
 	
 	public static void main(String[] args) {
 		long[] arr = {1544,650,192,821,1903,810,1715};
-		int[] peek = {1, 9, 2, 3, 6, 7};
+		int[] peek = {1,2,1,1,1,1};
 //		System.out.println(maxFruits(arr, 7, 6));
 		System.out.println(peakElement(peek, 6));
 	}
