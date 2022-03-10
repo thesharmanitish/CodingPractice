@@ -1,12 +1,13 @@
 package com.interview.google;
 
-/*public class FirstFirstAndLast {
+public class FirstFirstAndLast {
     public int[] searchRange(int[] nums, int target) {
         int[] ret = {-1,-1};
         if(nums.length ==0) return ret;
         
-    }*/
-//}
+        return null;
+    }
+}
 //
 //
 //Approach 4, Golden-section search
