@@ -7,7 +7,27 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
-public class MyLinkedHashSet {
+/**
+ * https://leetcode.com/problems/remove-duplicate-letters/
+ * 
+ * Given a string s, remove duplicate letters so that every letter appears once
+ * and only once. You must make sure your result is the smallest in
+ * lexicographical order among all possible results.
+ * 
+ * 
+ * 
+ * Example 1:
+ * 
+ * Input: s = "bcabc" Output: "abc"
+ * 
+ * Example 2:
+ * 
+ * Input: s = "cbacdcbc" Output: "acdb"
+ * 
+ * @author nisharma
+ *
+ */
+public class DuplicateLetters {
 	public static String removeDuplicateLetters(String s) {
 		Stack<Character> stack = new Stack<>();
 		int[] count = new int[26];
@@ -17,15 +37,15 @@ public class MyLinkedHashSet {
 		}
 		boolean[] visited = new boolean[26];
 		for (char c : arr) {
-			count[c-'a']--;
-			if(visited[c-'a'])
+			count[c - 'a']--;
+			if (visited[c - 'a'])
 				continue;
-			while ( !stack.isEmpty() && stack.peek() > c && count[stack.peek()-'a']>0) {
-				visited[stack.pop()-'a'] = false;
+			while (!stack.isEmpty() && stack.peek() > c && count[stack.peek() - 'a'] > 0) {
+				visited[stack.pop() - 'a'] = false;
 			}
 			stack.push(c);
-			
-			visited[c-'a'] = true;
+
+			visited[c - 'a'] = true;
 		}
 
 		StringBuilder sb = new StringBuilder();
