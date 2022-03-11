@@ -9,10 +9,11 @@ public class LengthOfLIS {
 	    	int i=0, j= size;
 	    	while(i<j) {
 	    		int mid = (i+j)/2;
-	    		if(num>tails[mid]) {
-	    			i = mid+1;
-	    		}else {
+	    		if(num<tails[mid]) {
 	    			j= mid;
+	    		}else {
+	    			i = mid+1;
+	    			
 	    		}
 	    	}
 	    	if(i==size) size++;

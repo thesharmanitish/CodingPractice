@@ -38,8 +38,10 @@ public class DuplicateLetters {
 		boolean[] visited = new boolean[26];
 		for (char c : arr) {
 			count[c - 'a']--;
+
 			if (visited[c - 'a'])
 				continue;
+
 			while (!stack.isEmpty() && stack.peek() > c && count[stack.peek() - 'a'] > 0) {
 				visited[stack.pop() - 'a'] = false;
 			}
@@ -57,7 +59,7 @@ public class DuplicateLetters {
 
 	public static void main(String[] args) {
 		int[] peek = { 2, 1, 1, 5, 6, 2, 3, 1 };
-		System.out.println(removeDuplicateLetters("bcabc"));
+		System.out.println(removeDuplicateLetters("cbacdcbc"));
 	}
 
 }
