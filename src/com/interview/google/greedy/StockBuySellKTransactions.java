@@ -95,10 +95,13 @@ public class StockBuySellKTransactions {
 		}
 		int T[][] = new int[K + 1][prices.length];
 
-		for(int i=1;i<=K;i++) {
-			for(int j=1;j<prices.length;j++) {
-				for(int m=1;m<j;m++)
-					T[i][j]=Math.max(T[i][j-1],prices[j]-prices[m]+T[i-1][m]);
+		for (int i = 1; i < T.length; i++) {
+			for (int j = 1; j < T[0].length; j++) {
+				int maxVal = 0;
+				for (int m = 0; m < j; m++) {
+					maxVal = Math.max(maxVal, prices[j] - prices[m] + T[i - 1][m]);
+				}
+				T[i][j] = Math.max(T[i][j - 1], maxVal);
 			}
 		}
 		printActualSolution(T, prices);
