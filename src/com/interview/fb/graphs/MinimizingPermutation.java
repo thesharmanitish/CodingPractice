@@ -28,7 +28,7 @@ public class MinimizingPermutation {
 
 	int minOperations(int[] arr) {
 		// Write your code here
-
+		return 0;
 	}
 
 	// These are the tests we use to determine if the solution is correct.
@@ -71,9 +71,5 @@ public class MinimizingPermutation {
 
 		// Add your own test cases here
 
-	}
-
-	public static void main(String[] args) {
-		new Main().run();
 	}
 }
