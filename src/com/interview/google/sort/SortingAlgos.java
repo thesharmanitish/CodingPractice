@@ -66,7 +66,7 @@ public class SortingAlgos {
 	    		}
 			return ind;
 		}
-	    public static  int[] quickSort(int[] nums) {
+	    public static  int[] mergeSort(int[] nums) {
 	        if (nums == null || nums.length == 0) return nums;
 //	         sortArray(nums, 0, nums.length-1);
 	         bottomsUpSortArray(nums);
@@ -100,10 +100,24 @@ public class SortingAlgos {
 	        System.arraycopy(tmp, 0, nums, start, end - start + 1);
 	        
 	    }
+	    
+	    public static  int[] quickSort(int[] nums) {
+	        if (nums == null || nums.length == 0) return nums;
+//	         sortArray(nums, 0, nums.length-1);
+	         quickSort(nums, nums.length);
+	         return nums;
+	        
+	    }
+	    
+	    
+		private static void quickSort(int[] nums, int length) {
+			// TODO Auto-generated method stub
+			
+		}
 		public static void main(String[] args) {
 			int[] arr = {5,2,3,1};
 //			selectionSort(arr);
-			quickSort(arr);
+			mergeSort(arr);
 			Arrays.stream(arr).forEach(System.out::println);
 		}
 
