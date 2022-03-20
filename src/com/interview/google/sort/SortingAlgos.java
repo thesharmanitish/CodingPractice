@@ -43,9 +43,12 @@ public class SortingAlgos {
 	    }
 
 	    public static void swap(int[] arr, int a, int b){
-	        arr[a] = arr[a]+arr[b];
-	        arr[b] = arr[a]-arr[b];
-	        arr[a] = arr[a]-arr[b];
+	    	int temp = arr[a];
+	    	arr[a ]  = arr[b];
+	    	arr[b] = temp;
+//	        arr[a] = arr[a]+arr[b];
+//	        arr[b] = arr[a]-arr[b];
+//	        arr[a] = arr[a]-arr[b];
 	    }
 	    
 	    public static int[] selectionSort(int[] nums) {
@@ -102,22 +105,44 @@ public class SortingAlgos {
 	    }
 	    
 	    public static  int[] quickSort(int[] nums) {
-	        if (nums == null || nums.length == 0) return nums;
-//	         sortArray(nums, 0, nums.length-1);
-	         quickSort(nums, nums.length);
-	         return nums;
-	        
+            if (nums == null || nums.length == 0) return nums;
+	         quickSort(nums, 0, nums.length-1);
+	         return nums;   
 	    }
-	    
-	    
-		private static void quickSort(int[] nums, int length) {
-			// TODO Auto-generated method stub
-			
-		}
+	    public static  void quickSort(int[] nums, int start, int end) {
+            if(start>end)
+                return;
+             int pivot = partition(nums, start, end);
+             if(start< pivot-1)
+	            quickSort(nums, start, pivot-1);
+             if(pivot<end)
+                quickSort(nums,pivot, end);
+	            
+	    }	    
+	 	public static  int partition(int[] nums, int start, int end) {
+            int i = start, j = end;
+            int pivot = (end+start)/2;
+            
+            while(i<=j){
+                while(nums[i] < nums[pivot])
+                    i++;
+                while(nums[j] > nums[pivot])
+                    j--;
+                if (i <= j) {
+                    int temp = nums[i];
+                    nums[i]  = nums[j];
+                    nums[j] = temp;
+                    i++;
+                    j--;       
+                }
+            }
+            return i;           
+        }
 		public static void main(String[] args) {
 			int[] arr = {5,2,3,1};
 //			selectionSort(arr);
-			mergeSort(arr);
+//			mergeSort(arr);
+			quickSort(arr);
 			Arrays.stream(arr).forEach(System.out::println);
 		}
 
