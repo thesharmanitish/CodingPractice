@@ -12,6 +12,14 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
+
+/**
+ * Given a square grid of characters in the range ascii[a-z], rearrange elements of each row alphabetically, 
+ * ascending. Determine if the columns are also in ascending alphabetical order, top to bottom. Return YES if they are or NO if they are not.
+ * 
+ * @author nisharma
+ *
+ */
 class GridChallenge {
 
     /*
@@ -29,8 +37,6 @@ class GridChallenge {
             Arrays.sort(c);
             grid.set(i, String.valueOf(c));
         }
-        for(String g:grid)
-          System.out.println(g);
         for(int i=0;i<grid.size()-1;i++){
             for(int j=0;j<grid.get(i).length();j++){
                 if(grid.get(i).charAt(j)>grid.get(i+1).charAt(j))
@@ -42,5 +48,3 @@ class GridChallenge {
 
 }
 
-
-}
