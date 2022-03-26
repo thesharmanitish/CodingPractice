@@ -8,6 +8,9 @@ package com.interview.google.dp;
  * substring. When we found a palindrome, check if it's the longest one. Time
  * complexity O(n^2).
  * 
+ * Alternate Solution
+ * https://www.youtube.com/watch?v=y2BD4MJqV20
+ * 
  * @author nisharma
  *
  */
@@ -26,8 +29,8 @@ public class LongestPalindromicSubstring {
 			return s;
 		int n = s.length();
 		boolean[][] dp = new boolean[n][n];
-		for (int i = n - 1; i >= 0; i--) {
-			for (int j = i; j < n; j++) {
+		for (int i = n - 1; i >= 0; i--) { // start
+			for (int j = i; j < n; j++) { //end
 				if (s.charAt(i) == s.charAt(j) && ((j < i + 3) || dp[i + 1][j - 1])) {
 					dp[i][j] = true;
 					if (res.length() < j - i + 1 || res == null)
