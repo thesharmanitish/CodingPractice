@@ -24,7 +24,13 @@ class Pair {
 		return this;
 	}
 }
-
+/**
+ * 
+ * https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/
+ * 
+ * @author nisharma
+ *
+ */
 public class SlidingWindowMax {
 	public static ArrayList<Integer> slidingMaximum(final List<Integer> A, int B) {
 		Deque<Integer> dq = new LinkedList<Integer>();
