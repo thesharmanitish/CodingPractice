@@ -38,4 +38,3 @@ public class QuarterSumMaximize {
 
 		}
 	}
-	/* This Java code is contributed by Rajput-Ji*/
