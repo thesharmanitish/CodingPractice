@@ -29,7 +29,6 @@ public class LongestDuplicateSubstring {
 		System.out.println(new LongestDuplicateSubstring().longestDupSubstring("banana"));
 	}
 
-
 	public String longestDupSubstring(String s) {
 		if (s == null || s.length() == 0)
 			return s;
@@ -97,6 +96,8 @@ public class LongestDuplicateSubstring {
 		map.clear();
 		return -1;
 
+		
+	
 		
 	}
 	/**
