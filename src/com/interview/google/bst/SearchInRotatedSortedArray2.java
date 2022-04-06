@@ -35,7 +35,7 @@ public class SearchInRotatedSortedArray2 {
 				return true;
 			return false;
 		}
-		Arrays.toar
+		
 		while (low < high - 1) {
 			while (low < arr.length - 1 && arr[low] == arr[low + 1])
 				low++;
