@@ -5,6 +5,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+
+/**
+ *  Rotating Camera in forest with aperature angle find (angle) max trees which can be shown to camera
+ *  Klarna Interview Question 
+ *  
+ * @author nisharma
+ *
+ */
 public class MaxNumVisiblePoints {
     public static  int visiblePoints(List<List<Integer>> points, int angle, List<Integer> location) {
         int count = 0;
