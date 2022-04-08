@@ -49,6 +49,10 @@ public class StoneGame {
 			for (int start = 0; start <= piles.length - windowSize; start++) {
 				int end = start + windowSize - 1;
 				dp[start] = Math.max(piles[start] - dp[start + 1], piles[end] - dp[start]);
+				// 3,7,2,3,
+	//dp :		// 4,5,1
+				// -2 6
+				// 5
 			}
 		}
 		return dp[0] > 0 ? true : false;
