@@ -51,7 +51,7 @@ public class StoneGame {
 				dp[start] = Math.max(piles[start] - dp[start + 1], piles[end] - dp[start]);
 			}
 		}
-		return dp[piles.length - 1] > 0 ? true : false;
+		return dp[0] > 0 ? true : false;
 
 	}
 
