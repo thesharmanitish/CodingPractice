@@ -1,5 +1,9 @@
 package com.interview.google.priortyqueue;
 
+import java.util.Date;
+import java.util.List;
+import java.util.PriorityQueue;
+
 /**
  * https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/submissions/
  * 
@@ -50,6 +54,90 @@ public class WeakestRowsinMatrix {
 		for (int i = 0; i < k; i++) {
 			res[i] = pq.poll().row;
 		}
-		return res;
+		
+//		ObjectMapper mapper = new ObjectMapper();
+//		Map obj = mapper.readValue(data.toString(), Rec.class);
+
+		/*
+		 * List<Object> recs = (List<Object>) obj.get("data"); Object[] data = recs
+		 * .stream() .filter(student ->
+		 * ((Map)student).get("City").equals("Delhi")).filter(s->s.get(timestamp).)
+		 * .toArray(); Date d = new Date(); // d.getMonth() - d.getYear()
+		 */		return res;
 	}
+}
+
+
+class Rec{
+    long id;
+    long userId;
+    String userName;
+    Date timestamp;
+    String txnType;
+    double amount;
+    String location;
+    String ip;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public long getUserId() {
+		return userId;
+	}
+	public void setUserId(long userId) {
+		this.userId = userId;
+	}
+	public String getUserName() {
+		return userName;
+	}
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	public Date getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(Date timestamp) {
+		this.timestamp = timestamp;
+	}
+	public String getTxnType() {
+		return txnType;
+	}
+	public void setTxnType(String txnType) {
+		this.txnType = txnType;
+	}
+	public double getAmount() {
+		return amount;
+	}
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public String getIp() {
+		return ip;
+	}
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+	public Rec(long id, long userId, String userName, Date timestamp, String txnType, double amount, String location,
+			String ip) {
+		super();
+		this.id = id;
+		this.userId = userId;
+		this.userName = userName;
+		this.timestamp = timestamp;
+		this.txnType = txnType;
+		this.amount = amount;
+		this.location = location;
+		this.ip = ip;
+	}
+    
+    
+
 }
