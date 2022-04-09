@@ -6,7 +6,7 @@ import java.util.LinkedList;
 /**
  * Date 12/22/2015
  * 
- * @author Tushar Roy
+ * @author nisharma
  *
  *         Given stockc prices for certain days and at most k transactions how
  *         to buy and sell to maximize profit.
@@ -76,8 +76,8 @@ public class StockBuySellKTransactions {
 		for (int i = 1; i < T.length; i++) {
 			int maxDiff = -prices[0];
 			for (int j = 1; j < T[0].length; j++) {
-				T[i][j] = Math.max(T[i][j - 1], prices[j] + maxDiff);
-				maxDiff = Math.max(maxDiff, T[i - 1][j] - prices[j]);
+                T[i][j] = Math.max(maxDiff+prices[j], T[i][j-1]); // sold on this day , max profit today or previous day
+                maxDiff= Math.max(maxDiff,-prices[j]+ T[i-1][j]);  // max update to max of total profit today or previous transaction
 			}
 		}
 		printActualSolution(T, prices);
