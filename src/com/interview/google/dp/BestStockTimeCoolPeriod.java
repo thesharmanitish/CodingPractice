@@ -10,9 +10,11 @@ public class BestStockTimeCoolPeriod {
 	public int maxProfit(int[] prices) {
 		int[][] dp = new int[prices.length][prices.length];
 		int n = prices.length;
+		for (int i = 0; i < n; i++)
+			dp[n][i] = 
 		for (int i = 0; i < n; i++) {
 			for (int j = n - 2; j > i; j--) {
-				dp[i][j] = Math.max(prices[j] - prices[i] + dp[j + 1][n - 1], dp[i][j]);
+				dp[i][j] = Math.max(prices[j] - prices[i] + dp[j + 2][n - 1], dp[i][j]);
 
 			}
 
