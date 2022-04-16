@@ -15,6 +15,16 @@ import java.util.List;
  * The solution set must not contain duplicate subsets. Return the solution in
  * any order.
  * 
+ * 
+ * 
+ * 
+ *                                        []
+ *                     [][1]            [][2]                       [][3]
+ *            [][1][12]  [][1][13]     [][2][23]                    [][3]
+ *     [][1][12][123] [][1][13]        [][2][23]                    [][3]      
+ *     
+ *                  
+ *                  
  * @author nisharma
  *
  */
@@ -37,18 +47,16 @@ public class PowerSet {
 
 	public List<List<Integer>> subsets(int[] nums) {
 		List<List<Integer>> res = new ArrayList<>();
-		Arrays.sort(nums);
 		backtrack(nums, res, new ArrayList<>(), 0);
 		return res;
 	}
 
 	public void backtrack(int[] nums, List<List<Integer>> res, List<Integer> ll, int ind) {
-
 		res.add(new ArrayList<>(ll));
-		for (int i = ind; i < nums.length; i++) {
+		for(int i= ind;i<nums.length;i++) {
 			ll.add(nums[i]);
-			backtrack(nums, res, ll, i + 1);
-			ll.remove(ll.size() - 1);
+			backtrack(nums, res, ll, i+1);
+			ll.remove(ll.size()-1);
 		}
 	}
 
