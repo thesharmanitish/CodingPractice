@@ -1,6 +1,33 @@
 package com.interview.fb.trie;
 
+/**
+ * Trie Data Structure
+ * 
+ * @author nisharma
+ *
+ */
+
 public class MyTrie {
+	
+	/**
+	 *  Node class 
+	 * @author nisharma
+	 *
+	 */
+	class Node {
+
+		Node() {
+			m_nextChar = new Node[ALPHA_SIZE];
+			m_Value = null;
+		}
+
+		/** The next nodes. */
+		Node m_nextChar[];
+
+		/** The value. */
+		Object m_Value;
+	}
+
 	/** Size of the m_nextChar array. */
 	public static final int ALPHA_SIZE = 128;
 
@@ -121,23 +148,6 @@ public class MyTrie {
 		mTrie.put("aca", 98);
 		mTrie.put("bca", 99);
 		mTrie.put("ada", 100);
-	}
-
-	class Node {
-
-		/**
-		 * Constructor, creates a Node[ALPHA_SIZE].
-		 */
-		Node() {
-			m_nextChar = new Node[ALPHA_SIZE];
-			m_Value = null;
-		}
-
-		/** The next nodes. */
-		Node m_nextChar[];
-
-		/** The value. */
-		Object m_Value;
 	}
 
 }
