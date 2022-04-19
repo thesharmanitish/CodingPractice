@@ -52,22 +52,24 @@ public class Permutation {
 	 */
 	public static List<List<Integer>> permuteIterative(int[] nums) {
 		List<List<Integer>> res = new ArrayList<>();
-
 		List<Integer> ll = new ArrayList<>();
 		ll.add(nums[0]);
 		res.add(ll);
-		for (int i = 1; i < nums.length; i++) { // iterate on all element from second position
-			List<List<Integer>> tempRes = new ArrayList<>();
-			for (int j = 0; j <= i; j++) { // index to put next integer
-				for (List<Integer> t : res) {
+		for (int i = 1; i <nums.length; i++) {   //element
+			List<List<Integer>> tmp = new ArrayList<>();
+			for (int j = 0; j <=i; j++) {  //position
+				for(List<Integer> t: res) {   //list
 					List<Integer> new_l = new ArrayList<Integer>(t);
 					new_l.add(j, nums[i]);
-					tempRes.add(new_l);
+					tmp.add(new_l);
 				}
+//				if(j>t.size())
+//					return res;
+				
 			}
-			res = tempRes;
+			res = tmp;
+			
 		}
-
 		return res;
 	}
 
@@ -83,16 +85,19 @@ public class Permutation {
 			res.add(suffix);
 			return;
 		}
-		int num = nums[ind];
+
 		for (int i = 0; i <= suffix.size(); i++) {
-			List<Integer> ll = new ArrayList<>(suffix);
-			ll.add(i, num);
-			permute(nums, res, ll, ind + 1);
+			List<Integer> tmp = new ArrayList<>(suffix);
+			tmp.add(i, nums[ind]);
+			permute(nums, res, tmp, ind + 1);
+
 		}
 	}
 
 	public static void main(String[] args) {
-		int[] arr = { 1, 2, 3 };
+//		int[] arr = { 1, 2, 3 };
+		int[] arr = { 1, 1, 2 };
 		System.out.println(permuteIterative(arr));
 	}
 }
+

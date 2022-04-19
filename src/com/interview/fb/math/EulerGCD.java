@@ -19,6 +19,7 @@ public class EulerGCD {
 		// gcd(a,b) = gcd(b,a%b)
 		while (min > 0) {
 			max = max - min * (max / min);
+			//swap max, and min
 			int temp = max;
 			max = min;
 			min = temp;
