@@ -27,6 +27,7 @@ public class RotateMatrix {
     //     }
     // }
     public void rotate(int[][] mat) {
+    	
         for (int i = 0, j = mat.length - 1; i < j; ++i, --j) { // reverse rows order.
             int[] tmp = mat[i];
             mat[i] = mat[j];
