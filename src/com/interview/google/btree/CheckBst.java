@@ -2,7 +2,7 @@ package com.interview.google.btree;
 
 import java.util.Stack;
 
-class TreeNode {
+/*class TreeNode {
 	int val;
 	TreeNode left;
 	TreeNode right;
@@ -20,7 +20,7 @@ class TreeNode {
 		this.right = right;
 	}
 }
-
+*/
 public class CheckBst {
 
 
