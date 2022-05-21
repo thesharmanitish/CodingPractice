@@ -10,6 +10,20 @@ package com.interview.array;
  *
  */
 public class MaxProduct {
+	
+    public int maxProductOpt(int[] nums) {
+        int maxSoFar = nums[0], minSoFar = nums[0], prod =nums[0], result = maxSoFar;
+        
+        for(int i=1;i<nums.length;i++){
+            int tmp = Math.max(maxSoFar*nums[i],Math.max(nums[i]*minSoFar,nums[i]));
+            minSoFar = Math.min(maxSoFar*nums[i],Math.min(nums[i]*minSoFar,nums[i]));
+            maxSoFar = tmp;
+            result = Math.max(maxSoFar, result);
+        }
+            return result;
+        
+    }
+    
 	public int maxProduct(int[] nums) {
 		int prod = 1, max = Integer.MIN_VALUE;
 
