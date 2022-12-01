@@ -22,7 +22,7 @@ public class LengthOfLongestSubstring {
 	   
 	   //O(n^2)
 	    public int lengthOfLongestSubstringMyVersion(String s) {
-	        Deque<Character> set =new LinkedList()<>();
+	        Deque<Character> set =new LinkedList<>();
 	        int max= 0;
 	        for(char c:s.toCharArray()){
 	            if(set.contains(c)){
